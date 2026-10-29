@@ -3,7 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "engines": { "node": ">=24.0.0" },
+  "engines": {
+    "node": ">=24.0.0"
+  },
   "scripts": {
     "dev": "node scripts/astro.mjs dev --host 127.0.0.1",
     "build": "npm run verify && node scripts/astro.mjs build",
@@ -14,11 +16,16 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "test:browser": "node tests/prepare-browser-fixture.mjs && playwright test"
   },
-  "dependencies": { "astro": "7.4.4" },
+  "dependencies": {
+    "astro": "7.4.4",
+    "marked": "18.1.2",
+    "sanitize-html": "2.18.1"
+  },
   "devDependencies": {
     "@astrojs/check": "^0.9.9",
     "@playwright/test": "^1.58.0",
     "@types/node": "^24.0.0",
+    "@types/sanitize-html": "2.16.2",
     "tsx": "^4.20.0",
     "typescript": "^5.9.0"
   }

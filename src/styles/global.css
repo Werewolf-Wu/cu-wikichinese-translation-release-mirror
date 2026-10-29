@@ -30,8 +30,8 @@
   body { background: var(--bg); color: var(--text); line-height: 1.8; overflow-wrap: anywhere; }
   a { color: var(--accent); text-decoration: none; text-underline-offset: .25em; }
   a:hover { color: var(--accent-strong); }
-  button, summary { -webkit-tap-highlight-color: transparent; }
-  button, a, summary, input { touch-action: manipulation; }
+  button, a, summary, input { -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+  :where(a, button, summary):focus:not(:focus-visible) { outline: none; }
   :focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
   main:focus { outline: none; }
   ::selection { background: var(--accent); color: var(--bg); }
@@ -154,11 +154,31 @@
   .release-notes { border-top: 1px solid var(--border); }
   .release-notes summary { min-height: 44px; padding: 10px 20px; color: var(--muted); font-size: .875rem; display: flex; align-items: center; justify-content: space-between; gap: 15px; }
   .release-notes summary:hover { color: var(--accent); }
-  .release-notes summary > span { font-size: .95rem; color: var(--quiet); line-height: 1; }
+  .release-notes summary > span { font-size: .95rem; color: var(--quiet); line-height: 1; transition: transform 180ms ease; }
   .release-notes[open] summary > span { transform: rotate(45deg); }
-  .release-notes-body { padding: 3px 20px 18px; color: var(--body-copy); font-size: .9rem; line-height: 1.95; }
-  .release-notes-body > p { white-space: pre-line; overflow-wrap: anywhere; }
-  .release-notes-body .text-link { margin-top: 10px; font-size: .85rem; }
+  .release-notes-body { padding: 3px 20px 18px; color: var(--body-copy); font-size: .9rem; line-height: 1.85; }
+  .release-notes-body .text-link { margin-top: 16px; font-size: .85rem; }
+  .release-markdown { overflow-wrap: anywhere; }
+  .release-markdown > :first-child { margin-top: 0; }
+  .release-markdown > :last-child { margin-bottom: 0; }
+  .release-markdown h5, .release-markdown h6 { color: var(--text); margin: 22px 0 10px; font-size: .9rem; font-weight: 600; line-height: 1.6; }
+  .release-markdown p, .release-markdown ul, .release-markdown ol, .release-markdown pre, .release-markdown blockquote { margin-block: 10px; }
+  .release-markdown ul, .release-markdown ol { padding-left: 1.4em; }
+  .release-markdown li + li { margin-top: 9px; }
+  .release-markdown li::marker { color: var(--quiet); }
+  .release-markdown a { text-decoration: underline; }
+  .release-markdown code { padding: 1px 4px; border-radius: 3px; background: var(--bg); font-size: .85em; }
+  .release-markdown pre { max-width: 100%; padding: 12px; border: 1px solid var(--border); border-radius: 4px; white-space: pre-wrap; }
+  .release-markdown pre code { padding: 0; background: none; }
+  .release-markdown blockquote { margin-inline: 0; padding-left: 14px; border-left: 2px solid var(--border); color: var(--muted); }
+  .release-markdown hr { margin-block: 18px; border: 0; border-top: 1px solid var(--border); }
+  .release-markdown table { width: 100%; margin-block: 12px; border-collapse: collapse; table-layout: fixed; }
+  .release-markdown th, .release-markdown td { padding: 6px 8px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+  @supports selector(::details-content) and (interpolate-size: allow-keywords) {
+    .release-notes { interpolate-size: allow-keywords; }
+    .release-notes::details-content { block-size: 0; opacity: 0; overflow: clip; transition: block-size 180ms ease, opacity 180ms ease, content-visibility 180ms allow-discrete; }
+    .release-notes[open]::details-content { block-size: auto; opacity: 1; }
+  }
   .history { margin-top: 22px; border-top: 1px solid var(--border); }
   .history > summary { display: flex; justify-content: space-between; align-items: center; min-height: 64px; font-size: .95rem; gap: 15px; }
   .history-count { color: var(--quiet); font-size: .8rem; margin-left: 8px; }
@@ -236,5 +256,7 @@
   }
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
+    .release-notes summary > span { transition: none; }
+    .release-notes::details-content { transition: none; }
   }
 }

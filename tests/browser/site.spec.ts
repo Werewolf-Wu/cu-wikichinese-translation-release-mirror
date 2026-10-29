@@ -63,6 +63,10 @@ test('without JavaScript every version remains downloadable through native detai
   await page.locator('[data-release-history] > summary').click();
   const catalog = JSON.parse(await readFile('data/releases.json', 'utf8'));
   await expect(page.locator('[data-release-groups] [data-download-asset]:visible')).toHaveCount(catalog.releases.length);
+  const notes = page.locator('[data-latest-releases] [data-release-tag="v1.8.2"] [data-release-notes]');
+  await notes.locator('summary').click();
+  await expect(notes.locator('h5').first()).toHaveText("What's Changed");
+  await expect(notes.getByRole('link', { name: 'PR #1', exact: true }).first()).toBeVisible();
   await context.close();
 });
 
@@ -87,6 +91,76 @@ test('large archive and broad search remain bounded; repository base paths work'
   expect(href).toMatch(/^\/fixture-site\/downloads\//);
   expect((await page.request.get(new URL(href!, fixtureURL).href)).status()).toBe(200);
   expect(await page.evaluate(() => (window as unknown as { injected?: boolean }).injected)).toBeUndefined();
+});
+
+test('formatted release notes stay readable on mobile and keep original destinations', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 900 });
+  await page.goto('/');
+  const notes = page.locator('[data-latest-releases] [data-release-tag="v1.8.2"] [data-release-notes]');
+  await notes.locator('summary').click();
+  await expect(notes.locator('h5').first()).toHaveText("What's Changed");
+  await expect(notes.locator('.release-markdown > ul').first().locator(':scope > li')).toHaveCount(9);
+  const pr = notes.getByRole('link', { name: 'PR #1', exact: true }).first();
+  await expect(pr).toHaveAttribute('href', 'https://github.com/dodo23333/cu-chinese-wiki-translations/pull/1');
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.locator('[data-release-query]').fill('pauseQuote');
+  const result = page.locator('[data-search-card]:visible [data-release-notes]').first();
+  await result.locator('summary').click();
+  await expect(result.locator('.release-markdown > ul').first()).toBeVisible();
+});
+
+test('pointer focus stays quiet while keyboard focus and reduced-motion toggles remain usable', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  const notes = page.locator('[data-latest-releases] [data-release-notes]').first();
+  const summary = notes.locator('summary');
+  await summary.click();
+  await expect(summary).toHaveCSS('outline-style', 'none');
+  await expect(page.locator('[data-hero-download]')).toHaveCSS('-webkit-tap-highlight-color', 'rgba(0, 0, 0, 0)');
+  await page.keyboard.press('Tab');
+  const link = page.locator(':focus');
+  await expect(link).toHaveCSS('outline-style', 'solid');
+  await expect(link).toHaveCSS('outline-color', 'rgb(242, 212, 119)');
+  await page.keyboard.press('Shift+Tab');
+  await expect(summary).toBeFocused();
+  await expect(summary).toHaveCSS('outline-width', '2px');
+  await page.keyboard.press('Enter');
+  await expect(notes).not.toHaveAttribute('open');
+  await page.keyboard.press('Space');
+  await expect(notes).toHaveAttribute('open');
+  expect(await notes.evaluate((el) => el.getAnimations({ subtree: true }).length)).toBe(0);
+});
+
+test('native details animate opening and closing and tolerate rapid reversal', async ({ page }) => {
+  await page.goto('/');
+  const notes = page.locator('[data-latest-releases] [data-release-tag="v1.8.2"] [data-release-notes]');
+  await notes.scrollIntoViewIfNeeded();
+  const results = await notes.evaluate(async (element) => {
+    const summary = element.querySelector('summary')!;
+    const frame = () => new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
+    const height = () => element.getBoundingClientRect().height;
+    // ::details-content lives in the browser's details shadow tree; sample layout
+    // instead of relying on getAnimations() exposing its pseudo-element transitions.
+    const sample = async () => {
+      const heights: number[] = [];
+      const start = performance.now();
+      do { await frame(); heights.push(height()); } while (performance.now() - start < 300);
+      return { heights, end: height() };
+    };
+    const closed = height();
+    summary.click();
+    const opening = await sample();
+    summary.click();
+    const closing = await sample();
+    summary.click(); await frame(); summary.click(); await frame(); summary.click();
+    const final = await sample();
+    return { closed, opening, closing, final: final.end, open: element.hasAttribute('open') };
+  });
+  expect(results.opening.heights.some((height) => height > results.closed && height < results.opening.end)).toBe(true);
+  expect(results.closing.heights.some((height) => height > results.closing.end && height < results.opening.end)).toBe(true);
+  expect(results.closing.end).toBeCloseTo(results.closed, 0);
+  expect(results.open).toBe(true);
+  expect(results.final).toBeCloseTo(results.opening.end, 0);
 });
 
 test('text spacing overrides preserve content and document width', async ({ page }) => {
