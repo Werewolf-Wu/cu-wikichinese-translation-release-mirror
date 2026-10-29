@@ -13,6 +13,8 @@
 
 确认最近一次任务成功后，可在仓库 **Settings → Pages** 查看当前站点地址。默认项目站点会继承账号主页的自定义域名；当前账号使用 `www.hao-ming.top`，因此新项目最初会位于该域名的仓库子路径。HTTPS 目前由域名前面的 Cloudflare 提供，GitHub API 的 `https_enforced` 值不代表访客连接是否已使用 HTTPS；不要为此修改其他仓库的域名设置。构建使用 Pages 返回的 host 与 base path，并为站点 origin 使用 HTTPS。
 
+当前继承域名的 HTML 响应包含 `Cache-Control: max-age=28800`，Cloudflare 会命中缓存，访客可能在 8 小时内仍看到旧首页。绑定独立子域名时，建议为该主机或本项目 HTML 路径单独设置较短的浏览器缓存，并让 CDN 对 HTML 尊重源站缓存或绕过缓存。带内容校验值路径的下载文件和构建资源可以继续长期缓存。已有缓存的更新可能需要在 Cloudflare 清理对应路径；只重新运行 GitHub 部署不会自动清理这层缓存。
+
 `site-data` 的成功发布记录保存在 `data/published.json` 中，不要把它当成页面配置手工修改。
 
 ## 绑定自有子域名

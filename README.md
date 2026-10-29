@@ -2,6 +2,8 @@
 
 Astro + TypeScript 静态网站。网站内容、版本清单和下载文件均保存在本项目中，访客浏览时不需要请求 GitHub API。
 
+在线站点：[维基中文发布镜像](https://www.hao-ming.top/cu-wikichinese-translation-release-mirror/)。
+
 调整布局、文案或添加图片前，可参考 [设计与维护约定](DESIGN.md)，了解当前单栏结构和可灵活扩展的部分。
 
 ## 本地开发
