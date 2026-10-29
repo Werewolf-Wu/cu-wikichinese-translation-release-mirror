@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>未知伤亡 · 维基中文</title>
+<meta name="description" content="《未知伤亡》维基中文翻译补丁：查看项目介绍、安装教程、版本更新记录与免费下载。">
+<link rel="icon" href="./图片/wiki.png">
+<style>
+:root{color-scheme:dark;--bg:#141417;--text:#FDFDFD;--accent:#FED86A;--border:#303036;--muted:#a4a4ae;--card:#1a1a1e;--red:#ef8585}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;line-height:1.75;-webkit-font-smoothing:antialiased;font-size:15px;overflow-wrap:anywhere}
+a{color:var(--accent);text-decoration:none}
+::selection{background:var(--accent);color:var(--bg)}
+button,a,summary{-webkit-tap-highlight-color:transparent}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.wrap{max-width:780px;margin:0 auto;padding:0 22px}
+.wrap.wide{max-width:1040px}
+.hl{color:var(--accent)}
+.red{color:var(--red)}
+.hero{text-align:center;padding:clamp(40px,6vw,72px) 22px 24px;background:radial-gradient(ellipse at 50% 0,rgba(254,216,106,.055),transparent 70%)}
+.hero h1{font-size:clamp(48px,11vw,84px);font-weight:850;letter-spacing:-.04em;line-height:1.05;margin-bottom:8px}
+.hero .sub-cn{font-size:clamp(22px,4.5vw,32px);font-weight:700;color:var(--accent);letter-spacing:.06em;margin-bottom:8px}
+.hero .sub-en{font-size:13px;color:var(--muted);letter-spacing:.04em}
+.hero-copy{max-width:32em;margin:18px auto 0;color:#d6d6dc}
+.hero-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:22px}
+.hero-nav{margin-top:22px;display:flex;gap:4px;justify-content:center;flex-wrap:wrap;font-size:14px;font-weight:600}
+.hero-nav a{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;padding:8px 12px;color:var(--muted);border-radius:6px}
+.hero-nav a:hover{color:var(--accent);background:var(--card)}
+section{padding:40px 0;border-top:1px solid var(--border);scroll-margin-top:20px}
+section h2{font-size:20px;font-weight:700;margin-bottom:20px;letter-spacing:-.01em}
+.prose p{margin-bottom:14px;color:#d6d6dc}
+.prose p:last-child{margin-bottom:0}
+.prose .muted,.section-note{color:var(--muted);font-size:14px}
+.section-note{margin:-8px 0 22px}
+.prose ul{margin:8px 0 16px;padding-left:20px;color:#d6d6dc}
+.prose li{margin-bottom:4px}
+.prose a{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.news{padding:0 18px;border:1px solid var(--border);border-radius:10px;background:var(--card)}
+.news summary{min-height:48px;align-content:center;color:var(--accent);font-size:14px;font-weight:600;cursor:pointer}
+.news-body{padding:0 0 18px}
+.steps{list-style:none;counter-reset:step}
+.steps li{position:relative;padding-left:46px;margin-bottom:24px;counter-increment:step}
+.steps li::before{content:counter(step,decimal-leading-zero);position:absolute;left:0;top:0;color:var(--accent);font-size:14px;font-weight:700;line-height:28px}
+.steps h3{font-size:16px;margin-bottom:6px}
+.install-path{display:block;padding:12px 14px;margin-top:12px;border:1px solid var(--border);border-radius:8px;background:var(--card);font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:13px;color:var(--accent);overflow-wrap:anywhere}
+.prose a.resource-link{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:18px;border:1px solid var(--border);border-radius:10px;background:var(--card);text-decoration:none}
+.resource-link strong{display:block;color:var(--text);font-size:15px}
+.resource-link small{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+.resource-link:hover{border-color:var(--accent)}
+.dl-item{position:relative;border:1px solid var(--border);border-radius:10px;margin-bottom:12px;background:var(--card)}
+.dl-item:last-child{margin-bottom:0}
+.dl-head{display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;min-height:76px;padding:16px 96px 16px 16px;cursor:pointer;font-size:14.5px;list-style:none;border-radius:10px}
+.dl-head::-webkit-details-marker{display:none}
+.dl-head::before{content:"›";color:var(--accent);font-size:22px;line-height:1;transition:transform .15s}
+details[open]>.dl-head::before{transform:rotate(90deg)}
+.dl-head:hover{background:#222228}
+.dl-head:focus-visible{outline-offset:0}
+.dl-ver{font-weight:700}
+.dl-date{font-size:12.5px;color:var(--muted)}
+.dl-badge{font-size:10.5px;font-weight:700;color:var(--bg);background:var(--accent);border-radius:4px;padding:2px 7px}
+.dl-btn{position:absolute;top:16px;right:16px;display:inline-flex;align-items:center;justify-content:center;min-height:44px;min-width:60px;padding:8px 12px;border-radius:6px;border:1px solid #75643b;color:var(--accent);font-size:13px;font-weight:600}
+.dl-btn:hover{background:var(--accent);color:var(--bg);border-color:var(--accent)}
+.dl-body{padding:16px 18px;border-top:1px solid var(--border);font-size:14px;color:#c6c6ce;line-height:1.75}
+.dl-body ul{padding-left:18px}
+.dl-body li{margin-bottom:4px}
+.dl-body li:last-child{margin-bottom:0}
+.dl-body .ph{color:var(--muted)}
+.prose .contributors{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:0}
+.contributors li{padding:9px 12px;margin:0;border:1px solid var(--border);border-radius:6px;background:var(--card);font-size:14px}
+.prose .team-grid{display:grid;grid-template-columns:1fr;gap:12px;list-style:none;padding:0;margin:0}
+.team-grid li{padding:16px 18px;margin:0;border:1px solid var(--border);border-radius:10px;background:var(--card);color:#d6d6dc;font-size:14px}
+.team-grid strong{display:block;margin-bottom:6px;color:var(--muted);font-size:13px}
+.links{display:grid;grid-template-columns:1fr;gap:10px}
+.links a{display:flex;align-items:center;justify-content:space-between;padding:16px;font-size:14px;color:var(--text);border:1px solid var(--border);border-radius:8px;background:var(--card);gap:12px}
+.links a:hover{border-color:#75643b;background:#222228}
+.links a .link-label{display:flex;align-items:center;gap:12px;min-width:0}
+.links a .link-label img{width:20px;height:20px;flex:none;object-fit:contain;border-radius:3px}
+.links a .go{color:var(--accent);font-size:16px;flex:none}
+.btn-inline{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:9px 20px;border-radius:8px;font-size:14px;font-weight:600;background:var(--accent);color:var(--bg);border:1px solid var(--accent);font-family:inherit;cursor:pointer;text-decoration:none}
+.btn-inline:hover{background:#f5cd4a}
+.btn-inline.secondary{background:transparent;border-color:var(--border);color:var(--text)}
+.btn-inline.secondary:hover{border-color:var(--muted)}
+footer{padding:30px 0 44px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--border);text-align:center}
+.modal{background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:14px;max-width:460px;width:calc(100% - 32px);max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);margin:auto;padding:28px 24px 24px;overflow-y:auto}
+.modal::backdrop{background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+body:has(.modal[open]){overflow:hidden}
+.modal h3{font-size:19px;font-weight:700;margin-bottom:14px;color:var(--accent);display:flex;align-items:center;gap:8px}
+.modal h3 img{height:1em;width:auto}
+.modal p{font-size:14.5px;color:#d6d6dc;line-height:1.75;margin-bottom:24px}
+.modal-actions{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:10px}
+.modal-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:8px 18px;border-radius:8px;font-size:13.5px;font-weight:600;font-family:inherit;cursor:pointer;border:1px solid var(--border);background:transparent;color:var(--text)}
+.modal-btn:hover{border-color:var(--accent)}
+.modal-btn.primary{background:var(--accent);border-color:var(--accent);color:var(--bg)}
+.modal-btn.primary:hover{background:#f5cd4a}
+@media(min-width:600px){
+  .prose .contributors{grid-template-columns:repeat(4,minmax(0,1fr))}
+}
+@media(min-width:800px){
+  .links,.prose .team-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:480px){
+  section{padding:32px 0}
+  .wrap{padding:0 18px}
+  .hero{padding-inline:18px}
+  .hero-nav a{padding-inline:10px}
+  .dl-date{flex-basis:100%;padding-left:18px}
+  .modal{padding:24px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dl-head::before{transition:none}
+}
+</style>
+</head>
+<body>
+<dialog class="modal" id="supportModal" aria-labelledby="modalTitle" aria-describedby="modalDescription">
+  <h3 id="modalTitle">支持中文 Wiki！<img src="./图片/wiki.png" alt=""></h3>
+  <p id="modalDescription">中文灰机 wiki 由汉化组、社区管理层、维中组、社区成员共同组成，花费大量时间和精力建站，给国内玩家一个中文的权威数据信息查询网站！</p>
+  <div class="modal-actions"><button class="modal-btn" id="modalClose" type="button">确定</button><a class="modal-btn primary" href="https://casualtiesunknown.huijiwiki.com/wiki/首页/" target="_blank" rel="noopener">前往支持</a></div>
+</dialog>
+<header class="hero">
+  <h1>未知伤亡</h1>
+  <div class="sub-cn">维基中文</div>
+  <div class="sub-en">Casualties: Unknown · Wiki-Enhanced Chinese</div>
+  <p class="hero-copy">翻译之外，补全物品数值、机制说明与游戏心得。</p>
+  <div class="hero-actions"><a class="btn-inline" href="#download">下载翻译补丁 <span aria-hidden="true">&nbsp;↓</span></a><a class="btn-inline secondary" href="#tutorial">查看安装教程</a></div>
+  <nav class="hero-nav" aria-label="页面导航"><a href="#news">新闻</a><a href="#tutorial">教程</a><a href="#download">下载</a><a href="#credits">名单</a><a href="#links">链接</a></nav>
+</header>
+<section><div class="wrap prose"><h2>项目介绍</h2><p><strong>《维基中文》</strong>（更强大的翻译）是一个扩展性中文翻译。它将大量数值、功能描述及游戏心得添加进了几乎所有物品、建筑、液体、健康面板以及生物的描述之中。</p><p>数据来源主要通过<a href="https://casualtiesunknown.huijiwiki.com/" target="_blank" rel="noopener" class="hl">灰机wiki</a>以及解包，因此称为“维基中文”，简称“维中”。<br>但实际上它并不是 100% 准确的，数据过期、遗漏和错误等问题有时是不可避免的，因此<a href="https://qun.qq.com/universal-share/share?ac=1&authKey=mksZrqaftGnnFf1m2%2FgEgeYv0Al%2BQ6nO2lj%2BIKZ9qLinVe6H5P6eOygclr9qrmT&busi_data=eyJncm91cENvZGUiOiI1MjEwMjM4MzYiLCJ0b2tlbiI6ImNodE4zdWJaZ0xOMlluTHFOV0kzcFZIaXBPMmNSb2RGTGNRNjI3cW5wc1J4SFZiUURnTkZtTXkrejBNeVhXc2wiLCJ1aW4iOiIzMDQ5NDQzNjMifQ%3D%3D&data=b2DJPDovrnhV8pmq_6y5ItmVgD-i3dl2YTOfQWPdurC70gbUFykMXJqTpsSYAGlsVWikOEmMfqeCg8VdvnzuSg&svctype=4&tempid=h5_group_info" target="_blank" rel="noopener" class="hl">维中组</a>以及<a href="https://pd.qq.com/s/6kvn8wr3x?b=9" target="_blank" rel="noopener" class="hl">社区</a>一直以来对此进行维护。当然也欢迎您的贡献。</p><p class="muted">主要由官方简体中文作为底板，及包含内华达刃脊锁补丁的多人联机汉化，再由维基制作组在此基础上扩展的功能性维基翻译补丁。</p><p><span class="hl">当前版本</span> 1.8.3（正式版 2026-7-7）<br>已涵盖游戏内绝大部分内容。自 1.8.3 起有更加标准化、工程化的工作流程，且修复了大部分历史遗留问题。</p></div></section>
+<section id="news"><div class="wrap prose">
+  <h2>随缘新闻</h2>
+  <details class="news"><summary>阅读最新消息</summary><div class="news-body"><p>正式版有大量新增物品、物块、生物等信息，短时间内无法快速补齐，因此请等待2.0版本，因此想了解更多信息请前往<a href="https://casualtiesunknown.huijiwiki.com/" target="_blank" rel="noopener" class="hl">灰机Wiki</a>。</p></div></details>
+</div></section>
+<section><div class="wrap prose"><h2>补丁作用</h2><p class="muted">你知道吗：翻译文件补丁文件全称 "Wiki CasualtiesUnknownDemo chinese Chinese"，缩减成两个字母便是 "WC"，没错，我故意的wa（被打）。</p><p><strong>翻译覆盖范围（7.1 版本）：</strong></p><ul><li>物品（main）：<span class="hl">279</span></li><li>背景物块（buildings）：约 <span class="hl">70</span></li><li>状态效果（moodles）：<span class="hl">171</span></li><li>液体种类（other 中的液体定义）：<span class="hl">74</span></li><li>生物种类（buildings 中的敌人生物）：<span class="hl">8</span></li></ul><p class="muted">以及暂停界面文本、医疗界面文本、设置界面文本等多处地方。</p></div></section>
+<section id="tutorial"><div class="wrap prose">
+  <h2>安装教程</h2>
+  <ol class="steps">
+    <li><h3>下载汉化文件</h3><p>在任意渠道下载最新版本的汉化。确保游戏已安装并至少启动过一次，游戏会自动生成语言文件夹。</p></li>
+    <li><h3>放入语言文件夹</h3><p>右键 Steam 里的游戏（未知伤亡 试玩版）→ 管理 → 浏览本地文件。把下载下来的汉化文件放入以下目录：</p><code class="install-path">Casualties Unknown Demo/CasualtiesUnknown_Data/Lang</code></li>
+    <li><h3>切换汉化</h3><p>运行游戏并切换汉化。</p></li>
+  </ol>
+  <a class="resource-link" href="https://b23.tv/9rTDiob" target="_blank" rel="noopener"><span><strong>观看旧版安装教程</strong><small>Bilibili · 旧版流程，供安装时参考</small></span><span aria-hidden="true">↗</span></a>
+</div></section>
+<section><div class="wrap prose"><h2>数据来源</h2><p>所有数据均来自于官方 wiki 和维中组解包得出，以保证准确率。若出现描述错误尽快反馈。</p><ul><li>10 个物品分类中的 <span class="hl">300</span> 个物品描述文件</li><li><span class="hl">40</span> 个游戏 Buff 机制文件</li><li><span class="hl">60</span> 个其他维基文件等</li></ul><p class="muted">但在 1.7 修正后，大多数据都来自于解包数据，以保证绝对准确率。</p></div></section>
+<section><div class="wrap prose"><h2>更新说明</h2><p>正式版翻译补丁于 <span class="hl">2026-04-26</span> 推出。</p><p>此后将搁置"常规"更新，除非：</p><ul><li>游戏进行较大的数值平衡调整</li><li>或有人催更（笑）</li></ul><p>后续如有更新或改动，将在此 <a href="https://github.com/dodo23333/cu-chinese-wiki-translations" target="_blank" rel="noopener">GitHub 仓库</a> 发布。如需新版功能性翻译，可留意本仓库更新。</p></div></section>
+<section><div class="wrap prose"><h2><span class="red">注意事项</span></h2><p class="muted">如果您在装载该翻译文件后出现以下情况：</p><ul><li>查看描述时可能会轻微卡顿（可能跟电脑配置有关）</li><li>当一个容器内液体过多的时候，查看详细信息可能会导致截断或缺失（纯液体描述文字太多，屏幕有限，暂时没有可解决办法）</li><li>有时查看物品描述时频繁闪动（可以先将物品捡起来放在背包再扔出去，即可正常显示；也可以在背包里查看）</li></ul><p class="muted">如果存在其它严重问题，建议不要再使用并卸载，防止后续问题。这不是您的问题，也不是补丁的问题，而是游戏适配性并不高，有些人能正常用，有些人有问题。</p></div></section>
+<section id="download"><div class="wrap">
+  <h2>下载</h2>
+  <p class="section-note">点击版本行可展开更新记录；右侧按钮直接下载 JSON 文件。补丁免费，无需注册。</p>
+  <div class="dl-item">
+    <details name="releases" open>
+      <summary class="dl-head"><span class="dl-ver">v1.8</span><span class="dl-badge">最新</span><span class="dl-date">2026-07-07</span></summary>
+      <div class="dl-body"><ul>
+        <li>调整建筑与效果类描述，暂时移除效果颜色和治疗方式（后续重新加上）</li>
+        <li>修复颜色标注不正确问题</li>
+        <li>更新健康相关颜色</li>
+        <li>统一液体容器文本描述格式</li>
+        <li>删除物品描述中无用信息</li>
+        <li>修正部分内容与数据</li>
+        <li>修复部分陷阱的数据和格式问题</li>
+        <li>液体容器新增容量比，删除物品描述中的电池信息</li>
+        <li>所有文本重新对标“简体中文”，尽量避免个人汉化</li>
+      </ul></div>
+    </details>
+    <a class="dl-btn" href="./正式版/【最新版】维基中文v1.8.json" download aria-label="下载 v1.8 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases">
+      <summary class="dl-head"><span class="dl-ver">v1.7</span><span class="dl-date">2026-06-14</span></summary>
+      <div class="dl-body"><ul>
+        <li>重新调整并统一所有格式（物品、工具、容器、装备、食物、效果等）</li>
+        <li>修正所有旧数据，经解包完成修正，错误率降至 8% 以下</li>
+        <li>新增健康数据面板各项数值的简要介绍</li>
+        <li>暂停界面添加“小知识”</li>
+        <li>优化液体显示（迷你桶 / 彩虹桶），仅保留基本数值，不再跟随液体颜色</li>
+        <li>修整 buff 类描述，新增治疗方法并统一格式</li>
+        <li>跟上新版本物品（含岩浆），陷阱描述更美观</li>
+      </ul></div>
+    </details>
+    <a class="dl-btn" href="./正式版/维基中文v1.7.json" download aria-label="下载 v1.7 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases">
+      <summary class="dl-head"><span class="dl-ver">v1.6</span><span class="dl-date">2026-06-01</span></summary>
+      <div class="dl-body"><ul>
+        <li>适配 v7.0 Demo 新版本内容（资料暂缺，后续补齐）</li>
+        <li>完整修复文件格式，消除 8 个黄色错误，严格通过 JSON 格式校验</li>
+        <li>修正果汁、精制果汁数值错误</li>
+        <li>修正绷带、帆布、撕扯的敷料、液体离心机、迷你桶、自动泵的描述</li>
+        <li>新增三项数值的实际增加描述（做三项体育运动时）</li>
+        <li>冰类液体新增过量描述</li>
+        <li>修复幸存者日记无法显示的 bug</li>
+      </ul></div>
+    </details>
+    <a class="dl-btn" href="./正式版/维基中文v1.6.json" download aria-label="下载 v1.6 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases">
+      <summary class="dl-head"><span class="dl-ver">v1.5</span><span class="dl-date">2026-04-26</span></summary>
+      <div class="dl-body"><ul>
+        <li>修复容器液体描述问题</li>
+        <li>缩减部分液体描述，防止 bug</li>
+        <li>删除所有无用描述，防止文件过大产生 bug</li>
+        <li>精缩所有数值，大部分为整数</li>
+        <li>精缩大部分描述，防止描述过长</li>
+        <li>修复一些离谱的描述错误</li>
+        <li>修正重力袋、炸药、4 把砍刀、地雷等大部分物品的旧版描述</li>
+        <li>重新翻译所有陷阱，更全面</li>
+        <li>重翻部分 buff，补上遗漏项</li>
+        <li>修正尿液（掺尿柠檬汁、假柠檬汁、柠檬汁）与核废水（放射水、清洁水、过滤水）两种液体</li>
+        <li>标题与简介颜色更丰富，便于与其他语言文件区分（正式版绿色、测试版黄色）</li>
+        <li>补充大部分高价液体的价值（每 100mL）</li>
+      </ul></div>
+    </details>
+    <a class="dl-btn" href="./正式版/维基中文v1.5.json" download aria-label="下载 v1.5 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases"><summary class="dl-head"><span class="dl-ver">v1.4</span></summary><div class="dl-body"><p class="ph">早期版本 · 更新记录暂缺。</p></div></details>
+    <a class="dl-btn" href="./正式版/维基中文v1.4.json" download aria-label="下载 v1.4 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases"><summary class="dl-head"><span class="dl-ver">v1.3</span></summary><div class="dl-body"><p class="ph">早期版本 · 更新记录暂缺。</p></div></details>
+    <a class="dl-btn" href="./正式版/维基中文v1.3.json" download aria-label="下载 v1.3 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases"><summary class="dl-head"><span class="dl-ver">v1.2</span></summary><div class="dl-body"><p class="ph">早期版本 · 更新记录暂缺。</p></div></details>
+    <a class="dl-btn" href="./正式版/维基中文v1.2.json" download aria-label="下载 v1.2 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases"><summary class="dl-head"><span class="dl-ver">v1.1</span></summary><div class="dl-body"><p class="ph">早期版本 · 更新记录暂缺。</p></div></details>
+    <a class="dl-btn" href="./正式版/维基中文v1.1.json" download aria-label="下载 v1.1 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases"><summary class="dl-head"><span class="dl-ver">v1.0</span></summary><div class="dl-body"><p class="ph">早期版本 · 更新记录暂缺。</p></div></details>
+    <a class="dl-btn" href="./正式版/维基中文v1.0.json" download aria-label="下载 v1.0 翻译补丁">下载</a>
+  </div>
+  <div class="dl-item">
+    <details name="releases"><summary class="dl-head"><span class="dl-ver">v0.1</span></summary><div class="dl-body"><p class="ph">最初版本 · 更新记录暂缺。</p></div></details>
+    <a class="dl-btn" href="./正式版/维基简中v0.1.json" download aria-label="下载 v0.1 翻译补丁">下载</a>
+  </div>
+</div></section>
+<section><div class="wrap prose"><h2>维护与贡献</h2><p>本翻译补丁为<strong>公益性质</strong>。如果你付费获得了这个文件，那么你一定是被骗了。</p><p>任何人都可以对本文件进行修改或纠正。如果你想提交修改 / 纠正意见，或已经修改完成的翻译补丁文件，建议通过以下渠道：</p><p>邮箱：<a href="mailto:mc109727981@163.com">mc109727981@163.com</a><br>GitHub：<a href="https://github.com/dodo23333/cu-chinese-wiki-translations" target="_blank" rel="noopener">未知伤亡维基中文翻译项目</a>（新仓库）</p><p class="muted">如果提交的是意见或反馈，我们会尽快纠正并上传新文件。如果提交的是已修改好的翻译文件（请说明修改了哪些内容），我们检查无误后会更新到仓库。你可以要求署名。</p><p>我们感谢每一位维护维中的人。</p></div></section>
+<section><div class="wrap prose"><h2>加入我们</h2><p>《未知伤亡：维基中文》制作组招人 qwq。欢迎各位有时间、希望贡献<a href="https://pd.qq.com/s/6kvn8wr3x?b=9" target="_blank" rel="noopener" class="hl">社区</a>的人加入。</p><p><strong>QQ 群号：521023836</strong></p><p class="muted">注意：只有当你有充足的时间并且想深度参与贡献的时候才进群。</p><p style="margin-top:18px;"><a class="btn-inline" href="https://qun.qq.com/universal-share/share?ac=1&authKey=mksZrqaftGnnFf1m2%2FgEgeYv0Al%2BQ6nO2lj%2BIKZ9qLinVe6H5P6eOygclr9qrmT&busi_data=eyJncm91cENvZGUiOiI1MjEwMjM4MzYiLCJ0b2tlbiI6ImNodE4zdWJaZ0xOMlluTHFOV0kzcFZIaXBPMmNSb2RGTGNRNjI3cW5wc1J4SFZiUURnTkZtTXkrejBNeVhXc2wiLCJ1aW4iOiIzMDQ5NDQzNjMifQ%3D%3D&data=b2DJPDovrnhV8pmq_6y5ItmVgD-i3dl2YTOfQWPdurC70gbUFykMXJqTpsSYAGlsVWikOEmMfqeCg8VdvnzuSg&svctype=4&tempid=h5_group_info" target="_blank" rel="noopener">点击加入 QQ 群</a></p></div></section>
+<section id="credits"><div class="wrap wide prose">
+  <h2>维基简中 维护贡献名单（26.6）</h2>
+  <p class="muted">共 40 人（排名不分先后）：</p>
+  <ul class="contributors">
+    <li>月曦MonXi</li><li>影月炎YUN</li><li>戈伦</li><li>JiYv</li><li>义锦</li><li>AlCl3</li><li>黑藓Black_Moss</li><li>7.62X51mmNATOm1185lr</li>
+    <li>楠枫灯</li><li>一只叫芒果的CAT</li><li>软盘</li><li>SLLLLLLLLUG</li><li>内华达刃脊锁</li><li>冷白喵qwq</li><li>烁光Eilte</li><li>溪风_streamwind</li>
+    <li>LH-霁堇Violet</li><li>xiaoQ_CA</li><li>翎间逐雯铃</li><li>Lydia临愫55555</li><li>冰溯</li><li>白猫贝贝</li><li>巴大蝴</li><li>香育肥猪肉</li>
+    <li>Tragulari</li><li>繁猗喵</li><li>YQ也奇桑</li><li>小小夏</li><li>Grok</li><li>玩星</li><li>星瞳</li><li>选择部分</li><li>卷柏</li><li>三棵小树</li>
+    <li>蓝洛</li><li>鸟子不会飞</li><li>0S3S</li><li>白砂糖</li><li>氟化锂</li><li>LootDust</li>
+  </ul>
+</div></section>
+<section><div class="wrap wide prose">
+  <h2>维基中文版维护 &amp; 制作组（26.7）</h2>
+  <ul class="team-grid">
+    <li><strong>主制作：</strong>冷白喵qwq</li>
+    <li><strong>主修：</strong>星瞳、白砂糖</li>
+    <li><strong>绘制 / 美术：</strong>冰溯、白菜</li>
+    <li><strong>宣发 / 宣传：</strong>泠月、卷柏</li>
+    <li><strong>代码 / 解包：</strong>选择部分、LootDust、C₂H₄F₂、溟浩、雪上谣、LH-霁堇</li>
+    <li><strong>吉祥物：</strong>玩星、执</li>
+    <li><strong>仓库代发：</strong>溪风_StreamWind</li>
+    <li><strong>频修：</strong>YQ也奇桑、繁猗喵、0S3S、三棵小树</li>
+    <li><strong>监制：</strong>烁光</li>
+    <li><strong>权制 / 汉化组监督：</strong>软盘、楠枫灯、黑藓Black_Moss、小菜、Lio_FX</li>
+    <li><strong>(26.5-6) 基文：</strong>软盘</li>
+    <li><strong>意见 / 测试：</strong>xiaoQ_CA、翎间逐雯铃、Lydia临愫、白猫贝贝、kiki、香育肥猪肉、Tragulari、穆曦、鸟子不会飞、氟化锂、JUNU、PHLP_Neo、t҉̡͎̞̜̀͠t҉̨̲͉͑͋́͞t҉、执</li>
+  </ul>
+</div></section>
+<section id="links"><div class="wrap wide"><h2>相关链接</h2><div class="links"><a href="https://github.com/dodo23333/cu-chinese-wiki-translations" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/Git.ico" alt="">GitHub 仓库（新版）</span><span class="go">↗</span></a><a href="https://github.com/StreamWind114514/Casualties-Unknown-Simplified-Chinese-Wiki" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/Git.ico" alt="">GitHub 仓库（旧版 · 已归档）</span><span class="go">↗</span></a><a href="https://www.nexusmods.com/scavprototype/mods/64" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/Nmod.ico" alt="">NexusMods · 维基中文</span><span class="go">↗</span></a><a href="https://qun.qq.com/universal-share/share?ac=1&authKey=mksZrqaftGnnFf1m2%2FgEgeYv0Al%2BQ6nO2lj%2BIKZ9qLinVe6H5P6eOygclr9qrmT&busi_data=eyJncm91cENvZGUiOiI1MjEwMjM4MzYiLCJ0b2tlbiI6ImNodE4zdWJaZ0xOMlluTHFOV0kzcFZIaXBPMmNSb2RGTGNRNjI3cW5wc1J4SFZiUURnTkZtTXkrejBNeVhXc2wiLCJ1aW4iOiIzMDQ5NDQzNjMifQ%3D%3D&data=b2DJPDovrnhV8pmq_6y5ItmVgD-i3dl2YTOfQWPdurC70gbUFykMXJqTpsSYAGlsVWikOEmMfqeCg8VdvnzuSg&svctype=4&tempid=h5_group_info" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/QQ.ico" alt="">维中制作组QQ 群（521023836）</span><span class="go">↗</span></a><a href="https://pd.qq.com/s/6kvn8wr3x?b=9" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/频道.ico" alt="">QQ 频道 · Orsoniks游戏未知伤亡交流频道</span><span class="go">↗</span></a><a href="https://casualtiesunknown.huijiwiki.com/" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/wiki.png" alt="">灰机 wiki · 未知伤亡中文维基</span><span class="go">↗</span></a><a href="https://store.steampowered.com/app/4576490/Casualties_Unknown/" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/Steam.ico" alt="">Steam 商店 · 未知伤亡</span><span class="go">↗</span></a><a href="https://b23.tv/eBbJW7K" target="_blank" rel="noopener"><span class="link-label"><img src="./图片/B.ico" alt="">Bilibili · 维基中文宣传片</span><span class="go">↗</span></a></div></div></section>
+<section><div class="wrap prose">
+  <h2>关于本站</h2>
+  <p>本站为<strong>纯前端托管页面</strong>，无任何自建服务器，目的只为方便、快捷地查看和下载“维基中文”的最新信息与版本，帮部分朋友绕开网络门槛。</p>
+  <p>网页本身不包含数据库、不收集任何敏感信息，全部内容由 AI 编写，部署于第三方托管平台。请勿攻击本站——没有任何收益，反而可能面临法律风险。</p>
+  <p class="muted">使用提示：新闻与版本记录可点击展开，也可用 Tab 聚焦后按 Enter 或空格操作。支持提示关闭后会记住本次站点版本；也可按 Esc 关闭。</p>
+</div></section>
+<footer><div class="wrap">未知伤亡 · 维基中文 &nbsp;·&nbsp; 最后更新 2026-10-28</div></footer>
+<script>
+(() => {
+  const SITE_VERSION = '2026-10-28-v2';
+  const STORAGE_KEY = 'cu_wiki_support_modal_seen';
+  const modal = document.getElementById('supportModal');
+  const closeBtn = document.getElementById('modalClose');
+  let seen = null;
+  try {
+    seen = localStorage.getItem(STORAGE_KEY);
+  } catch {}
+  if (seen !== SITE_VERSION) {
+    setTimeout(() => modal.showModal(), 400);
+  }
+  closeBtn.addEventListener('click', () => modal.close());
+  modal.addEventListener('close', () => {
+    try {
+      localStorage.setItem(STORAGE_KEY, SITE_VERSION);
+    } catch {}
+  });
+  modal.addEventListener('click', event => {
+    if (event.target !== modal) return;
+    const rect = modal.getBoundingClientRect();
+    if (event.clientX < rect.left || event.clientX > rect.right ||
+        event.clientY < rect.top || event.clientY > rect.bottom) {
+      modal.close();
+    }
+  });
+})();
+</script>
+</body>
+</html>
