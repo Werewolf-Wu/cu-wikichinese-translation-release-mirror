@@ -55,16 +55,17 @@ npm run preview    # 查看构建结果
 
 默认显示最新 5 个版本，其余放在“历史版本”。历史列表超过 10 条时固定最大高度并在区域内滚动，完整保留所有版本。搜索覆盖版本号、tag、日期及更新记录；清空后恢复原来的历史展开状态。关闭 JavaScript 时仍可展开记录和下载文件。
 
-## 未来启用 GitHub Pages
+## GitHub Pages
 
-仓库和域名暂不绑定。准备上线时：
+网站源码仓库为 [Werewolf-Wu/cu-translation-release-mirror](https://github.com/Werewolf-Wu/cu-translation-release-mirror)，`main` 保存源码，`site-data` 保存同步数据。Pages 使用 GitHub Actions 构建与发布。
 
-1. 将本项目推送到站点仓库的默认分支，保留 `.github/workflows/`、依赖锁文件和现有下载资源。
-2. 仓库 **Settings → Pages → Build and deployment → Source** 选择 **GitHub Actions**。
-3. 确认仓库允许 Actions 写入内容分支；如有分支规则，允许机器人更新 `site-data`。
-4. 在 Actions 中手动运行“同步翻译并部署网站”，或向默认分支提交一次变更。
+默认分支提交会触发更新。需要立即同步或重试时，可在 Actions 中手动运行“同步翻译并部署网站”：
 
-工作流通过 `actions/configure-pages` 获取站点 origin 和 base path，自动适配普通项目站点、`用户名.github.io` 仓库及 Pages 自定义域名。不要在组件中硬编码用户名或仓库路径。自定义域名仍需由站点所有者在 Pages 设置和 DNS 中配置。
+```sh
+gh workflow run pages.yml --repo Werewolf-Wu/cu-translation-release-mirror
+```
+
+工作流通过 `actions/configure-pages` 获取站点 origin 和 base path，自动适配普通项目站点、`用户名.github.io` 仓库及 Pages 自定义域名。不要在组件中硬编码用户名或仓库路径。子域名绑定和更换托管的步骤见 [托管与交接说明](HOSTING.md)。
 
 北京时间每天 **09:00、21:00** 各检查一次，对应 UTC cron `0 1,13 * * *`。整点执行可能因 GitHub 排队而延迟，平台也可能跳过一次计划任务；下次成功执行会补齐缺失版本。
 
