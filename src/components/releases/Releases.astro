@@ -1,0 +1,33 @@
+---
+import catalogData from '../../../data/releases.json';
+import { sortedReleases, latestStable, type ReleaseCatalog } from '../../lib/catalog';
+import ReleaseCard from './ReleaseCard.astro';
+const catalog = catalogData as ReleaseCatalog;
+const releases = sortedReleases(catalog);
+const latest = latestStable(catalog);
+const recent = releases.slice(0, 5);
+const history = releases.slice(5);
+const scrollHistory = history.length > 10;
+---
+<div class="release-browser" data-release-browser>
+  <form class="release-search" role="search" aria-label="搜索翻译版本" data-release-search hidden>
+    <label for="release-query">查找版本</label>
+    <div class="search-input-row"><span aria-hidden="true" class="search-icon">⌕</span><input id="release-query" type="search" name="q" placeholder="版本号、日期或更新内容" autocomplete="off" maxlength="160" aria-describedby="release-search-hint" aria-controls="release-search-results" data-release-query disabled /><button type="reset" class="button secondary search-clear" data-release-clear>清除</button></div>
+    <p id="release-search-hint" class="search-hint">搜索全部 {releases.length} 个版本的版本号、标签、日期和更新记录。</p>
+    <p class="search-status" role="status" aria-live="polite" aria-atomic="true" data-release-search-status></p>
+  </form>
+  <div data-release-groups>
+    <div class="list-heading"><h3>最近发布</h3><span>{recent.length} 个版本</span></div>
+    <div class="release-list" data-latest-releases>{recent.map((release) => <ReleaseCard release={release} latest={release.id === latest?.id} />)}</div>
+    {history.length > 0 && <details class="history" data-release-history><summary><span>历史版本 <span class="history-count">{history.length}</span></span><span class="history-toggle" aria-hidden="true">＋</span></summary><div class:list={['release-list', 'history-list', { 'scroll-list': scrollHistory }]} tabindex={scrollHistory ? 0 : undefined} role={scrollHistory ? 'region' : undefined} aria-label={scrollHistory ? '历史版本下载列表，可滚动' : undefined} data-release-history-list>{history.map((release) => <ReleaseCard release={release} latest={release.id === latest?.id} />)}</div></details>}
+  </div>
+  <div id="release-search-results" data-release-results hidden>
+    <h3 class="results-heading">搜索结果</h3>
+    <div class="release-list search-results-list" data-release-results-list>{releases.map((release) => <ReleaseCard release={release} latest={release.id === latest?.id} search />)}</div>
+    <p class="no-results" data-release-no-results hidden>没有找到匹配的版本。试试更短的版本号、日期或关键词。</p>
+  </div>
+  <noscript><p class="no-script-note">可以直接展开历史版本与更新记录，下载所需文件。</p></noscript>
+</div>
+<script>
+  import '../../scripts/release-search';
+</script>

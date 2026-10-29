@@ -1,0 +1,86 @@
+name: 同步翻译并部署网站
+
+on:
+  schedule:
+    # UTC 01:00 / 13:00 = 北京时间 09:00 / 21:00
+    - cron: '0 1,13 * * *'
+  workflow_dispatch:
+  push:
+    branches-ignore:
+      - site-data
+
+permissions: {}
+
+concurrency:
+  group: pages-${{ github.repository }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 读取网站源码
+        uses: actions/checkout@v6
+      - name: 设置 Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          cache: npm
+      - name: 安装锁定依赖
+        run: npm ci
+      - name: 读取 Pages 地址
+        id: pages
+        uses: actions/configure-pages@v5
+      - name: 恢复持久版本数据
+        run: npx tsx scripts/data-store.ts restore
+      - name: 同步官方翻译附件
+        id: sync
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run sync
+      - name: 验证版本清单和文件
+        run: npm run verify
+      - name: 测试同步与持久保存逻辑
+        run: npm test
+      - name: 检查页面和类型
+        run: npm run check
+      - name: 判断是否需要发布
+        id: status
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+          MIRROR_REPAIRED: ${{ steps.sync.outputs.changed }}
+        run: npx tsx scripts/deployment-state.ts check
+      - name: 构建静态网站
+        if: steps.status.outputs.needed == 'true'
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: npm run build
+      - name: 上传 Pages 构建结果
+        if: steps.status.outputs.needed == 'true'
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: dist
+      - name: 部署 Pages
+        id: deployment
+        if: steps.status.outputs.needed == 'true'
+        uses: actions/deploy-pages@v4
+      - name: 记录成功发布的版本
+        if: steps.deployment.outcome == 'success'
+        env:
+          SITE_URL: ${{ steps.pages.outputs.origin }}
+          BASE_PATH: ${{ steps.pages.outputs.base_path }}
+        run: npx tsx scripts/deployment-state.ts mark
+      - name: 保存同步状态和下载文件
+        if: always() && steps.sync.outcome == 'success'
+        run: npx tsx scripts/data-store.ts persist

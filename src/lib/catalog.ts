@@ -75,6 +75,12 @@ export function latestStable(catalog: ReleaseCatalog): ReleaseEntry | undefined 
     ?? sortedReleases(catalog).find((release) => !release.prerelease);
 }
 
+export function formatReleaseDate(iso: string | null | undefined): string {
+  if (!iso) return '';
+  const date = new Date(iso);
+  return Number.isNaN(date.getTime()) ? '' : new Intl.DateTimeFormat('sv-SE', { timeZone: 'Asia/Shanghai' }).format(date);
+}
+
 export function formatSize(bytes: number): string {
   return bytes >= 1024 * 1024 ? `${(bytes / (1024 * 1024)).toFixed(2)} MB` : `${Math.round(bytes / 1024)} KB`;
 }

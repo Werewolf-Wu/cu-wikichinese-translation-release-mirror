@@ -1,0 +1,40 @@
+---
+import catalogData from '../../../data/releases.json';
+import { latestStable, formatSize, formatReleaseDate, type ReleaseCatalog } from '../../lib/catalog';
+import { sitePath } from '../site-path';
+const release = latestStable(catalogData as ReleaseCatalog);
+const asset = release?.assets[0];
+const date = formatReleaseDate(release?.publishedAt);
+---
+<header class="site-header shell">
+  <a class="wordmark" href="#" aria-label="维基中文 · 返回顶部"><span class="brand-mark" aria-hidden="true">维</span><span>未知伤亡 <span class="wordmark-divider">/</span> 维基中文</span></a>
+  <nav aria-label="主要导航" class="main-nav">
+    <a href="#about">介绍</a>
+    <a href="#tutorial">安装</a>
+    <a href="#download">下载</a>
+    <a href="#credits">贡献者</a>
+    <a href="#links">链接</a>
+  </nav>
+</header>
+<div class="hero shell">
+  <div class="hero-copy">
+    <p class="eyebrow"><span class="small-line" aria-hidden="true"></span> CASUALTIES: UNKNOWN</p>
+    <h1>未知伤亡<span>维基中文<span class="title-dot" aria-hidden="true">.</span></span></h1>
+    <p class="hero-intro">翻译之外，<br class="desktop-break" />把数值、机制与心得一起带进游戏。</p>
+    <p class="hero-description">基于官方翻译，为物品、建筑、液体、健康面板与生物补充说明。</p>
+    <div class="hero-actions">
+      {release && asset ? <a class="button primary" href={sitePath(asset.path)} download={asset.name} aria-label={`下载 ${release.tag} ${(asset.label || asset.name)}`} data-hero-download>下载最新版本 <span aria-hidden="true">↓</span></a> : <a class="button primary" href="#download">查看下载 <span aria-hidden="true">↓</span></a>}
+      <a class="button secondary" href="#tutorial">安装教程 <span aria-hidden="true">↗</span></a>
+    </div>
+    <p class="hero-footnote">免费分享 · 无需注册</p>
+  </div>
+  <aside class="hero-release" aria-label="最新正式版本" data-latest-release={release?.tag}>
+    <div class="release-cover" aria-hidden="true"><span class="cover-vertical">未知伤亡</span><span class="cover-wiki">WIKI<br /><span>中文</span></span><span class="cover-caption">物品 / 数值 / 机制</span><span class="cover-corner">＋</span></div>
+    <div class="hero-release-info">
+      <div class="hero-release-heading"><span class="status-dot" aria-hidden="true"></span><span>最新正式版</span>{date && <time datetime={release?.publishedAt ?? undefined}>{date}</time>}</div>
+      <p class="hero-version">{release?.tag ?? '维基中文'}</p>
+      <p class="hero-file-meta">{asset ? `${(asset.label || asset.name)} · ${formatSize(asset.size)}` : '查看全部版本与更新记录'}</p>
+      <a class="text-link" href="#download">查看版本记录 <span aria-hidden="true">↗</span></a>
+    </div>
+  </aside>
+</div>

@@ -1,0 +1,30 @@
+---
+import { formatSize, formatReleaseDate, type ReleaseEntry } from '../../lib/catalog';
+import { sitePath } from '../site-path';
+interface Props {
+  release: ReleaseEntry;
+  latest?: boolean;
+  search?: boolean;
+}
+const { release, latest = false, search = false } = Astro.props;
+const date = formatReleaseDate(release.publishedAt);
+const searchText = [release.version, release.tag, release.title, date ?? '', release.notes].join(' ').normalize('NFKC').toLocaleLowerCase('zh-CN');
+---
+<article class="release-card" data-release-card data-release-id={release.id} data-release-tag={release.tag} data-search-card={search ? '' : undefined} data-search-text={search ? searchText : undefined}>
+  <div class="release-card-top">
+    <div class="release-title-row">
+      <h4>{release.tag}</h4>
+      {latest && <span class="badge">最新正式版</span>}
+      {release.prerelease && <span class="badge muted-badge">预发布</span>}
+      <span class="release-date">{date ? <time datetime={release.publishedAt ?? undefined}>{date}</time> : '早期版本'}</span>
+    </div>
+    {release.title && release.title !== release.tag && release.title !== release.version && <p class="release-title">{release.title}</p>}
+  </div>
+  <div class="asset-list">
+    {release.assets.map((asset) => <a class="download-link" href={sitePath(asset.path)} download={asset.name} aria-label={`下载 ${release.tag} · ${(asset.label || asset.name)}（${formatSize(asset.size)}）`} data-download-asset={asset.id}><span><span class="asset-label">{(asset.label || asset.name)}</span><small>{formatSize(asset.size)}</small></span><span class="download-action">下载 <span aria-hidden="true">↓</span></span></a>)}
+  </div>
+  <details class="release-notes" data-release-notes>
+    <summary>更新记录 <span aria-hidden="true">＋</span></summary>
+    <div class="release-notes-body"><p>{release.notes.trim() || '早期版本，更新记录暂缺。'}</p>{release.releaseUrl && <a class="text-link" href={release.releaseUrl} target="_blank" rel="noopener noreferrer" aria-label={`查看 ${release.tag} 的原始发布页（新窗口）`}>原始发布页 <span aria-hidden="true">↗</span></a>}</div>
+  </details>
+</article>

@@ -3,6 +3,54 @@
   "upstream": "dodo23333/cu-chinese-wiki-translations",
   "releases": [
     {
+      "id": "349901377",
+      "tag": "v1.8.3",
+      "version": "v1.8.3",
+      "title": "v1.8.3",
+      "publishedAt": "2026-07-06T21:38:17Z",
+      "notes": "## What's Changed\r\n* feat: update color of buildings and moodles, remove wrong descriptions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/10\r\n* feat: add 100ml/u for liquid containers and fix some problems by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/11\r\n* feat: update format of liquid containers by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/12\r\n* feat: remove redundant descriptions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/13\r\n* fix: correct wrong color and update format by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/14\r\n* feat: update health color by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/15\r\n* feat: update health format by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/16\r\n* feat: update format and correct some data  by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/17\r\n* feat: update some format and data by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/18\r\n* feat: update translations by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/19\r\n* fix: correct some data and format by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/20\r\n* fix: correct landmine data and format by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/21\r\n* docs: add contribution guidelines by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/22\r\n* feat: remove battery descriptions from items by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/23\r\n* docs: update readme by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/24\r\n* fix: update basic tutorial content by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/25\r\n* fix: correct descriptions of antisepticmush and bucketofnochicken by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/26\r\n* feat: update translations by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/27\r\n* refactor: update scripts and add tests by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/28\r\n* fix: permission problem for github actions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/29\r\n\r\n\r\n**Full Changelog**: https://github.com/dodo23333/cu-chinese-wiki-translations/compare/v1.8.2...v1.8.3",
+      "source": "upstream",
+      "releaseUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/tag/v1.8.3",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "468499141",
+          "name": "wiki-translations-officialv1.8.3.json",
+          "label": "维基中文_基于官方翻译v1.8.3.json",
+          "path": "downloads/releases/349901377/468499141-da1e26e723e0c21b.json",
+          "size": 508567,
+          "sha256": "da1e26e723e0c21b0a3a99d84944f5f557fa5282679bd782d3ca5da3d612fb97",
+          "sourceUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/download/v1.8.3/wiki-translations-officialv1.8.3.json",
+          "upstreamUpdatedAt": "2026-07-28T18:31:25Z",
+          "digest": "sha256:da1e26e723e0c21b0a3a99d84944f5f557fa5282679bd782d3ca5da3d612fb97"
+        }
+      ]
+    },
+    {
+      "id": "345983060",
+      "tag": "v1.8.2",
+      "version": "v1.8.2",
+      "title": "v1.8.2",
+      "publishedAt": "2026-06-28T20:24:59Z",
+      "notes": "## What's Changed\n* feat: 增加pauseQuote块的覆写 ; 配置.gitattributes适配CR/CRLF换行 ; ruff添加全角字符例外 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/1\n* fix: 删除非dsc字符额外切入部分 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/2\n* fix:非dsc项全部值同步现存维基中文 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/3\n* fix:读yaml文件时将Null type转换为空字符串 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/4\n* fix:将带dsc后缀的汉化匹配到当前汉化 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/5\n* Update 维基简中中间文件.yaml by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/6\n* fix:update alienblooddsc healthuse by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/7\n* feat: remove redundant values by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/8\n* feat: update translations, format and color by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/9\n\n## New Contributors\n* @Werewolf-Wu made their first contribution in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/1\n* @dodo23333 made their first contribution in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/8\n\n**Full Changelog**: https://github.com/dodo23333/cu-chinese-wiki-translations/compare/v1.7.5...v1.8.2",
+      "source": "upstream",
+      "releaseUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/tag/v1.8.2",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "460475973",
+          "name": "_.v1.8.2.json",
+          "label": "维基中文_基于官方翻译v1.8.2.json",
+          "path": "downloads/releases/345983060/460475973-c622c0d629d0b7a9.json",
+          "size": 523691,
+          "sha256": "c622c0d629d0b7a9ab00e4003d0d702739e3187dc9b77d203394e3671851c973",
+          "sourceUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/download/v1.8.2/_.v1.8.2.json",
+          "upstreamUpdatedAt": "2026-06-28T20:24:59Z",
+          "digest": "sha256:c622c0d629d0b7a9ab00e4003d0d702739e3187dc9b77d203394e3671851c973"
+        }
+      ]
+    },
+    {
       "id": "legacy-1.8",
       "tag": "v1.8",
       "version": "1.8",
@@ -19,6 +67,30 @@
           "path": "downloads/legacy/【最新版】维基中文v1.8.json",
           "size": 508568,
           "sha256": "8cd46fb0de61abb4345dd70b90f9dc612ab2fdecc8785b1ef5ecd236647fb7c4"
+        }
+      ]
+    },
+    {
+      "id": "340719749",
+      "tag": "v1.7.5",
+      "version": "v1.7.5",
+      "title": "v1.7.5",
+      "publishedAt": "2026-06-17T11:44:46Z",
+      "notes": "**Full Changelog**: https://github.com/dodo23333/cu-chinese-wiki-translations/commits/v1.7.5",
+      "source": "upstream",
+      "releaseUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/tag/v1.7.5",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "450173343",
+          "name": "wiki_translations_official.json",
+          "label": "",
+          "path": "downloads/releases/340719749/450173343-2b2fc165700811b3.json",
+          "size": 528562,
+          "sha256": "2b2fc165700811b375d8c35d8a528d8193a7513289a35cd9cd21f7eccce1411c",
+          "sourceUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/download/v1.7.5/wiki_translations_official.json",
+          "upstreamUpdatedAt": "2026-06-17T11:44:45Z",
+          "digest": "sha256:2b2fc165700811b375d8c35d8a528d8193a7513289a35cd9cd21f7eccce1411c"
         }
       ]
     },

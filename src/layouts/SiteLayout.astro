@@ -1,0 +1,27 @@
+---
+import '../styles/global.css';
+import { sitePath } from '../components/site-path';
+interface Props {
+  title?: string;
+  description?: string;
+}
+const {
+  title = '未知伤亡 · 维基中文',
+  description = '《未知伤亡》维基中文翻译补丁：了解物品数值与机制说明，查看安装教程、版本记录，免费下载翻译文件。',
+} = Astro.props;
+---
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#171719" />
+    <link rel="icon" href={sitePath('图片/wiki.png')} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳转到正文</a>
+    <slot />
+  </body>
+</html>
