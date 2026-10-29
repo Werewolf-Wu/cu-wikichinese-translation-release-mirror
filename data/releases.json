@@ -1,0 +1,278 @@
+{
+  "schemaVersion": 1,
+  "upstream": "dodo23333/cu-chinese-wiki-translations",
+  "releases": [
+    {
+      "id": "349901377",
+      "tag": "v1.8.3",
+      "version": "v1.8.3",
+      "title": "v1.8.3",
+      "publishedAt": "2026-07-06T21:38:17Z",
+      "notes": "## What's Changed\r\n* feat: update color of buildings and moodles, remove wrong descriptions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/10\r\n* feat: add 100ml/u for liquid containers and fix some problems by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/11\r\n* feat: update format of liquid containers by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/12\r\n* feat: remove redundant descriptions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/13\r\n* fix: correct wrong color and update format by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/14\r\n* feat: update health color by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/15\r\n* feat: update health format by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/16\r\n* feat: update format and correct some data  by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/17\r\n* feat: update some format and data by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/18\r\n* feat: update translations by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/19\r\n* fix: correct some data and format by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/20\r\n* fix: correct landmine data and format by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/21\r\n* docs: add contribution guidelines by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/22\r\n* feat: remove battery descriptions from items by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/23\r\n* docs: update readme by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/24\r\n* fix: update basic tutorial content by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/25\r\n* fix: correct descriptions of antisepticmush and bucketofnochicken by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/26\r\n* feat: update translations by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/27\r\n* refactor: update scripts and add tests by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/28\r\n* fix: permission problem for github actions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/29\r\n\r\n\r\n**Full Changelog**: https://github.com/dodo23333/cu-chinese-wiki-translations/compare/v1.8.2...v1.8.3",
+      "source": "upstream",
+      "releaseUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/tag/v1.8.3",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "468499141",
+          "name": "wiki-translations-officialv1.8.3.json",
+          "label": "维基中文_基于官方翻译v1.8.3.json",
+          "path": "downloads/releases/349901377/468499141-da1e26e723e0c21b.json",
+          "size": 508567,
+          "sha256": "da1e26e723e0c21b0a3a99d84944f5f557fa5282679bd782d3ca5da3d612fb97",
+          "sourceUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/download/v1.8.3/wiki-translations-officialv1.8.3.json",
+          "upstreamUpdatedAt": "2026-07-28T18:31:25Z",
+          "digest": "sha256:da1e26e723e0c21b0a3a99d84944f5f557fa5282679bd782d3ca5da3d612fb97"
+        }
+      ]
+    },
+    {
+      "id": "345983060",
+      "tag": "v1.8.2",
+      "version": "v1.8.2",
+      "title": "v1.8.2",
+      "publishedAt": "2026-06-28T20:24:59Z",
+      "notes": "## What's Changed\n* feat: 增加pauseQuote块的覆写 ; 配置.gitattributes适配CR/CRLF换行 ; ruff添加全角字符例外 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/1\n* fix: 删除非dsc字符额外切入部分 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/2\n* fix:非dsc项全部值同步现存维基中文 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/3\n* fix:读yaml文件时将Null type转换为空字符串 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/4\n* fix:将带dsc后缀的汉化匹配到当前汉化 by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/5\n* Update 维基简中中间文件.yaml by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/6\n* fix:update alienblooddsc healthuse by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/7\n* feat: remove redundant values by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/8\n* feat: update translations, format and color by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/9\n\n## New Contributors\n* @Werewolf-Wu made their first contribution in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/1\n* @dodo23333 made their first contribution in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/8\n\n**Full Changelog**: https://github.com/dodo23333/cu-chinese-wiki-translations/compare/v1.7.5...v1.8.2",
+      "source": "upstream",
+      "releaseUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/tag/v1.8.2",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "460475973",
+          "name": "_.v1.8.2.json",
+          "label": "维基中文_基于官方翻译v1.8.2.json",
+          "path": "downloads/releases/345983060/460475973-c622c0d629d0b7a9.json",
+          "size": 523691,
+          "sha256": "c622c0d629d0b7a9ab00e4003d0d702739e3187dc9b77d203394e3671851c973",
+          "sourceUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/download/v1.8.2/_.v1.8.2.json",
+          "upstreamUpdatedAt": "2026-06-28T20:24:59Z",
+          "digest": "sha256:c622c0d629d0b7a9ab00e4003d0d702739e3187dc9b77d203394e3671851c973"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.8",
+      "tag": "v1.8",
+      "version": "1.8",
+      "title": "v1.8",
+      "publishedAt": "2026-07-07T00:00:00+08:00",
+      "notes": "调整建筑与效果类描述，暂时移除效果颜色和治疗方式（后续重新加上）\n修复颜色标注不正确问题\n更新健康相关颜色\n统一液体容器文本描述格式\n删除物品描述中无用信息\n修正部分内容与数据\n修复部分陷阱的数据和格式问题\n液体容器新增容量比，删除物品描述中的电池信息\n所有文本重新对标“简体中文”，尽量避免个人汉化",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.8",
+          "name": "【最新版】维基中文v1.8.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/【最新版】维基中文v1.8.json",
+          "size": 508568,
+          "sha256": "8cd46fb0de61abb4345dd70b90f9dc612ab2fdecc8785b1ef5ecd236647fb7c4"
+        }
+      ]
+    },
+    {
+      "id": "340719749",
+      "tag": "v1.7.5",
+      "version": "v1.7.5",
+      "title": "v1.7.5",
+      "publishedAt": "2026-06-17T11:44:46Z",
+      "notes": "**Full Changelog**: https://github.com/dodo23333/cu-chinese-wiki-translations/commits/v1.7.5",
+      "source": "upstream",
+      "releaseUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/tag/v1.7.5",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "450173343",
+          "name": "wiki_translations_official.json",
+          "label": "",
+          "path": "downloads/releases/340719749/450173343-2b2fc165700811b3.json",
+          "size": 528562,
+          "sha256": "2b2fc165700811b375d8c35d8a528d8193a7513289a35cd9cd21f7eccce1411c",
+          "sourceUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/download/v1.7.5/wiki_translations_official.json",
+          "upstreamUpdatedAt": "2026-06-17T11:44:45Z",
+          "digest": "sha256:2b2fc165700811b375d8c35d8a528d8193a7513289a35cd9cd21f7eccce1411c"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.7",
+      "tag": "v1.7",
+      "version": "1.7",
+      "title": "v1.7",
+      "publishedAt": "2026-06-14T00:00:00+08:00",
+      "notes": "重新调整并统一所有格式（物品、工具、容器、装备、食物、效果等）\n修正所有旧数据，经解包完成修正，错误率降至 8% 以下\n新增健康数据面板各项数值的简要介绍\n暂停界面添加“小知识”\n优化液体显示（迷你桶 / 彩虹桶），仅保留基本数值，不再跟随液体颜色\n修整 buff 类描述，新增治疗方法并统一格式\n跟上新版本物品（含岩浆），陷阱描述更美观",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.7",
+          "name": "维基中文v1.7.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.7.json",
+          "size": 668714,
+          "sha256": "00faf4268d3b244332ff83c5a971765749529617dc294c391d754bd7029ba9d5"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.6",
+      "tag": "v1.6",
+      "version": "1.6",
+      "title": "v1.6",
+      "publishedAt": "2026-06-01T00:00:00+08:00",
+      "notes": "适配 v7.0 Demo 新版本内容（资料暂缺，后续补齐）\n完整修复文件格式，消除 8 个黄色错误，严格通过 JSON 格式校验\n修正果汁、精制果汁数值错误\n修正绷带、帆布、撕扯的敷料、液体离心机、迷你桶、自动泵的描述\n新增三项数值的实际增加描述（做三项体育运动时）\n冰类液体新增过量描述\n修复幸存者日记无法显示的 bug",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.6",
+          "name": "维基中文v1.6.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.6.json",
+          "size": 730496,
+          "sha256": "6716e1fa09667942afc7c91f51c0d14d05ae4d64b1180410698bccc02a705314"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.5",
+      "tag": "v1.5",
+      "version": "1.5",
+      "title": "v1.5",
+      "publishedAt": "2026-04-26T00:00:00+08:00",
+      "notes": "修复容器液体描述问题\n缩减部分液体描述，防止 bug\n删除所有无用描述，防止文件过大产生 bug\n精缩所有数值，大部分为整数\n精缩大部分描述，防止描述过长\n修复一些离谱的描述错误\n修正重力袋、炸药、4 把砍刀、地雷等大部分物品的旧版描述\n重新翻译所有陷阱，更全面\n重翻部分 buff，补上遗漏项\n修正尿液（掺尿柠檬汁、假柠檬汁、柠檬汁）与核废水（放射水、清洁水、过滤水）两种液体\n标题与简介颜色更丰富，便于与其他语言文件区分（正式版绿色、测试版黄色）\n补充大部分高价液体的价值（每 100mL）",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.5",
+          "name": "维基中文v1.5.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.5.json",
+          "size": 810286,
+          "sha256": "eede95ce85305b85437c944703a400fe1d65e89127ae8b89b654cb6fd82a83d0"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.4",
+      "tag": "v1.4",
+      "version": "1.4",
+      "title": "v1.4",
+      "publishedAt": null,
+      "notes": "早期版本，更新记录暂缺。",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.4",
+          "name": "维基中文v1.4.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.4.json",
+          "size": 846938,
+          "sha256": "8cdd46aa70a78a56bd0dbd2c02f2c9d956db02bc381494042da130fec4cc9d62"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.3",
+      "tag": "v1.3",
+      "version": "1.3",
+      "title": "v1.3",
+      "publishedAt": null,
+      "notes": "早期版本，更新记录暂缺。",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.3",
+          "name": "维基中文v1.3.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.3.json",
+          "size": 792252,
+          "sha256": "f583f45e9076b65780bb877757aeffb85369fd81767b56747c72373642f4b34b"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.2",
+      "tag": "v1.2",
+      "version": "1.2",
+      "title": "v1.2",
+      "publishedAt": null,
+      "notes": "早期版本，更新记录暂缺。",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.2",
+          "name": "维基中文v1.2.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.2.json",
+          "size": 631566,
+          "sha256": "be00fd4c938cd98ea686b4bcdfb7f6dab543247c2c60f6f4ec47e715479b1116"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.1",
+      "tag": "v1.1",
+      "version": "1.1",
+      "title": "v1.1",
+      "publishedAt": null,
+      "notes": "早期版本，更新记录暂缺。",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.1",
+          "name": "维基中文v1.1.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.1.json",
+          "size": 631468,
+          "sha256": "727291b87b9acf14bf4cda3caa92d8ecdf1f24b51f40bc0f8273359d568e71e3"
+        }
+      ]
+    },
+    {
+      "id": "legacy-1.0",
+      "tag": "v1.0",
+      "version": "1.0",
+      "title": "v1.0",
+      "publishedAt": null,
+      "notes": "早期版本，更新记录暂缺。",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-1.0",
+          "name": "维基中文v1.0.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基中文v1.0.json",
+          "size": 606516,
+          "sha256": "5813eeeedec56f4eae066560c1e2df4ff44d2aafecc788c0d04486c4410d0e67"
+        }
+      ]
+    },
+    {
+      "id": "legacy-0.1",
+      "tag": "v0.1",
+      "version": "0.1",
+      "title": "v0.1",
+      "publishedAt": null,
+      "notes": "早期版本，更新记录暂缺。",
+      "source": "legacy",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "legacy-0.1",
+          "name": "维基简中v0.1.json",
+          "label": "历史发布文件",
+          "path": "downloads/legacy/维基简中v0.1.json",
+          "size": 393675,
+          "sha256": "9861cc425cfefdee4283b09fc6f2e4a6892cbd53cde32c33f79b3c459386d622"
+        }
+      ]
+    }
+  ]
+}
