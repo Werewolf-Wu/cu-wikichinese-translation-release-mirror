@@ -4,11 +4,12 @@ export const links = {
   repository: 'https://github.com/dodo23333/cu-chinese-wiki-translations',
   oldRepository: 'https://github.com/StreamWind114514/Casualties-Unknown-Simplified-Chinese-Wiki',
   nexus: 'https://www.nexusmods.com/scavprototype/mods/64',
-  community: 'https://pd.qq.com/s/6kvn8wr3x?b=9',
+  community: 'https://pd.qq.com/g/pd37759316',
   group: 'https://qun.qq.com/universal-share/share?ac=1&authKey=mksZrqaftGnnFf1m2%2FgEgeYv0Al%2BQ6nO2lj%2BIKZ9qLinVe6H5P6eOygclr9qrmT&busi_data=eyJncm91cENvZGUiOiI1MjEwMjM4MzYiLCJ0b2tlbiI6ImNodE4zdWJaZ0xOMlluTHFOV0kzcFZIaXBPMmNSb2RGTGNRNjI3cW5wc1J4SFZiUURnTkZtTXkrejBNeVhXc2wiLCJ1aW4iOiIzMDQ5NDQzNjMifQ%3D%3D&data=b2DJPDovrnhV8pmq_6y5ItmVgD-i3dl2YTOfQWPdurC70gbUFykMXJqTpsSYAGlsVWikOEmMfqeCg8VdvnzuSg&svctype=4&tempid=h5_group_info',
   steam: 'https://store.steampowered.com/app/4576490/Casualties_Unknown/',
-  video: 'https://b23.tv/eBbJW7K',
-  tutorial: 'https://b23.tv/9rTDiob',
+  video: 'https://www.bilibili.com/video/BV1ZY7Q6pEMr',
+  issues: 'https://github.com/dodo23333/cu-chinese-wiki-translations/issues',
+  tutorial: 'https://www.bilibili.com/video/BV1BvV66mEBj',
   email: 'mailto:mc109727981@163.com',
 };
 

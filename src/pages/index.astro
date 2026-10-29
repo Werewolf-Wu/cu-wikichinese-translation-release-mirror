@@ -14,9 +14,9 @@ import { contributors, team, links, resources } from '../content/project';
         <p>《维基中文》是《未知伤亡》的扩展性中文翻译补丁，简称“维中”。它基于官方翻译，在几乎所有物品、建筑、液体、健康面板与生物的描述中，补充数值、功能说明和游戏心得。</p>
         <p>资料主要来自<a href={links.wiki} target="_blank" rel="noopener noreferrer">灰机 Wiki</a>与游戏解包，因此得名“维基中文”。内容由<a href={links.group} target="_blank" rel="noopener noreferrer">维中组</a>与<a href={links.community} target="_blank" rel="noopener noreferrer">社区成员</a>持续维护；游戏更新、资料遗漏与描述错误仍可能影响准确性，欢迎反馈和纠正。</p>
         <div class="coverage-card">
-          <div class="coverage-heading"><h3>翻译里有什么？</h3><span>原站 7.1 版本覆盖记录</span></div>
+          <div class="coverage-heading"><h3>翻译里有什么？</h3><span>7.1 版本覆盖记录</span></div>
           <dl class="coverage-stats"><div><dt>物品</dt><dd>279<span>项</span></dd></div><div><dt>背景物块</dt><dd>约 70<span>项</span></dd></div><div><dt>状态效果</dt><dd>171<span>项</span></dd></div><div><dt>液体</dt><dd>74<span>种</span></dd></div><div><dt>生物</dt><dd>8<span>种</span></dd></div></dl>
-          <p>此外还包括暂停界面、医疗界面、设置界面等文本。以上数字为原站的历史统计，当前内容请以下载文件为准。</p>
+          <p>此外还包括暂停界面、医疗界面、设置界面等文本。以上数字为历史统计，当前内容请以下载文件为准。</p>
         </div>
         <details class="editorial-details"><summary>数据来源与维护记录 <span aria-hidden="true">＋</span></summary><div><p>早期资料整理涉及 10 个物品分类中的 300 个物品描述文件、40 个 Buff 机制文件，以及 60 个其他维基文件。1.7 修正后，大部分数值以解包资料为依据。</p><p>正式版翻译补丁于 2026-04-26 推出。1.8.3 起进一步整理制作与维护流程，并修复历史问题。后续如有游戏数值调整或其他修正，将在<a href={links.repository} target="_blank" rel="noopener noreferrer">项目仓库</a>发布；具体变化请查阅下方版本记录。</p></div></details>
         <details id="news" class="editorial-details"><summary>随缘新闻 <span aria-hidden="true">＋</span></summary><div><p>正式版新增了许多物品、物块与生物信息，资料补充需要时间。想了解更多游戏信息，可以先查阅<a href={links.wiki} target="_blank" rel="noopener noreferrer">灰机 Wiki</a>。</p></div></details>
@@ -29,7 +29,7 @@ import { contributors, team, links, resources } from '../content/project';
         <p class="section-intro">先确认游戏已安装，并且至少启动过一次，让游戏生成语言文件夹。</p>
         <ol class="install-steps">
           <li><div class="step-body"><h3>下载翻译文件</h3><p>前往<a href="#download">下载区</a>，选择需要的版本并保存 JSON 文件。通常可以直接使用最新正式版。</p></div></li>
-          <li><div class="step-body"><h3>找到游戏的语言文件夹</h3><p>在 Steam 库中右键游戏 → 管理 → 浏览本地文件。将下载的翻译文件放入游戏的 <code>Lang</code> 文件夹。</p><div class="path-block"><span>原站试玩版路径参考</span><code>Casualties Unknown Demo/<wbr />CasualtiesUnknown_Data/<wbr />Lang</code></div><p class="small muted">不同游戏版本的目录名称可能不同，请以本地实际文件夹为准。</p></div></li>
+          <li><div class="step-body"><h3>找到游戏的语言文件夹</h3><p>在 Steam 库中右键游戏 → 管理 → 浏览本地文件。将下载的翻译文件放入游戏的 <code>Lang</code> 文件夹。</p><div class="path-block"><span>试玩版路径参考</span><code>Casualties Unknown Demo/<wbr />CasualtiesUnknown_Data/<wbr />Lang</code></div><p class="small muted">不同游戏版本的目录名称可能不同，请以本地实际文件夹为准。</p></div></li>
           <li><div class="step-body"><h3>在游戏里切换语言</h3><p>运行游戏，在语言设置中选择安装好的维基中文翻译。</p></div></li>
         </ol>
         <a class="resource-card" href={links.tutorial} target="_blank" rel="noopener noreferrer"><span class="resource-card-icon" aria-hidden="true">▷</span><span><strong>需要对照操作？</strong><small>观看 Bilibili 旧版安装教程，供安装时参考</small></span><span class="resource-arrow" aria-hidden="true">↗</span></a>
@@ -50,7 +50,7 @@ import { contributors, team, links, resources } from '../content/project';
         <h2 id="contribute-title">维护与贡献</h2>
         <p>维基中文是公益项目，翻译文件免费提供。任何人都可以修改和纠正内容，也欢迎提交问题、修改意见或已完成的翻译文件。</p>
         <p>提交时请说明问题所在，或列出修改了哪些内容。制作组会在核对后更新文件，你也可以提出署名要求。感谢每一位参与维护的人。</p>
-        <div class="contribute-links"><a class="resource-card" href={links.repository} target="_blank" rel="noopener noreferrer"><span><strong>在 GitHub 提交反馈</strong><small>未知伤亡维基中文翻译项目</small></span><span class="resource-arrow" aria-hidden="true">↗</span></a><a class="resource-card" href={links.email}><span><strong>通过邮件联系</strong><small>mc109727981@163.com</small></span><span class="resource-arrow" aria-hidden="true">↗</span></a></div>
+        <div class="contribute-links"><a class="resource-card" href={links.issues} target="_blank" rel="noopener noreferrer"><span><strong>在 GitHub 提交反馈</strong><small>未知伤亡维基中文翻译项目</small></span><span class="resource-arrow" aria-hidden="true">↗</span></a><a class="resource-card" href={links.email}><span><strong>通过邮件联系</strong><small>mc109727981@163.com</small></span><span class="resource-arrow" aria-hidden="true">↗</span></a></div>
         <div class="join-card"><div><h3>想更深入地参与？</h3><p>制作组欢迎有充足时间、希望长期贡献的朋友加入。</p><p class="group-number">QQ 群 · 521023836</p></div><a class="button secondary" href={links.group} target="_blank" rel="noopener noreferrer">加入制作组 <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
@@ -73,5 +73,5 @@ import { contributors, team, links, resources } from '../content/project';
       </div>
     </section>
   </main>
-  <footer class="site-footer shell"><div><a class="footer-brand" href="#">未知伤亡 <span>/</span> 维基中文</a><p>方便查看、下载与分享的翻译补丁页面。</p></div><div class="footer-end"><p>翻译文件免费分享 · 内容由社区维护</p><a href="#">回到顶部 <span aria-hidden="true">↑</span></a></div></footer>
+  <footer class="site-footer shell"><div><a class="footer-brand" href="#">未知伤亡 <span>/</span> 维基中文</a><p>方便查看、下载与分享的翻译补丁页面。</p></div><div class="footer-end"><p>发布镜像 · 内容由社区维护</p><a href="#">回到顶部 <span aria-hidden="true">↑</span></a></div></footer>
 </SiteLayout>
