@@ -56,14 +56,14 @@ jobs:
       - name: 判断是否需要发布
         id: status
         env:
-          SITE_URL: ${{ steps.pages.outputs.origin }}
+          SITE_URL: https://${{ steps.pages.outputs.host }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
           MIRROR_REPAIRED: ${{ steps.sync.outputs.changed }}
         run: npx tsx scripts/deployment-state.ts check
       - name: 构建静态网站
         if: steps.status.outputs.needed == 'true'
         env:
-          SITE_URL: ${{ steps.pages.outputs.origin }}
+          SITE_URL: https://${{ steps.pages.outputs.host }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: npm run build
       - name: 上传 Pages 构建结果
@@ -78,7 +78,7 @@ jobs:
       - name: 记录成功发布的版本
         if: steps.deployment.outcome == 'success'
         env:
-          SITE_URL: ${{ steps.pages.outputs.origin }}
+          SITE_URL: https://${{ steps.pages.outputs.host }}
           BASE_PATH: ${{ steps.pages.outputs.base_path }}
         run: npx tsx scripts/deployment-state.ts mark
       - name: 保存同步状态和下载文件

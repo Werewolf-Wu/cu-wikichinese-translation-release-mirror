@@ -57,12 +57,12 @@ npm run preview    # 查看构建结果
 
 ## GitHub Pages
 
-网站源码仓库为 [Werewolf-Wu/cu-translation-release-mirror](https://github.com/Werewolf-Wu/cu-translation-release-mirror)，`main` 保存源码，`site-data` 保存同步数据。Pages 使用 GitHub Actions 构建与发布。
+网站源码仓库为 [Werewolf-Wu/cu-wikichinese-translation-release-mirror](https://github.com/Werewolf-Wu/cu-wikichinese-translation-release-mirror)，`main` 保存源码，`site-data` 保存同步数据。Pages 使用 GitHub Actions 构建与发布。
 
 默认分支提交会触发更新。需要立即同步或重试时，可在 Actions 中手动运行“同步翻译并部署网站”：
 
 ```sh
-gh workflow run pages.yml --repo Werewolf-Wu/cu-translation-release-mirror
+gh workflow run pages.yml --repo Werewolf-Wu/cu-wikichinese-translation-release-mirror
 ```
 
 工作流通过 `actions/configure-pages` 获取站点 origin 和 base path，自动适配普通项目站点、`用户名.github.io` 仓库及 Pages 自定义域名。不要在组件中硬编码用户名或仓库路径。子域名绑定和更换托管的步骤见 [托管与交接说明](HOSTING.md)。

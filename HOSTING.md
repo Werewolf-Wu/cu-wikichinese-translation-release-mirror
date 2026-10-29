@@ -1,6 +1,6 @@
 # 托管、域名与交接
 
-源码仓库：[Werewolf-Wu/cu-translation-release-mirror](https://github.com/Werewolf-Wu/cu-translation-release-mirror)。当前使用 GitHub Pages，发布任务见 [Actions](https://github.com/Werewolf-Wu/cu-translation-release-mirror/actions/workflows/pages.yml)。页面设计的修改约定见 [DESIGN.md](DESIGN.md)。
+源码仓库：[Werewolf-Wu/cu-wikichinese-translation-release-mirror](https://github.com/Werewolf-Wu/cu-wikichinese-translation-release-mirror)。当前使用 GitHub Pages，发布任务见 [Actions](https://github.com/Werewolf-Wu/cu-wikichinese-translation-release-mirror/actions/workflows/pages.yml)。页面设计的修改约定见 [DESIGN.md](DESIGN.md)。
 
 ## 当前构建方式
 
@@ -11,7 +11,9 @@
 - Pages 来源为 **GitHub Actions**。工作流使用仓库自带的 `GITHUB_TOKEN`，不需要添加个人令牌。
 - 若设置分支保护，保留工作流写入 `site-data` 的权限。定时任务排队可能延迟，缺失版本会在下次成功执行补齐。
 
-确认最近一次任务成功后，可在仓库 **Settings → Pages** 查看当前站点地址。`site-data` 的成功发布记录保存在 `data/published.json` 中，不要把它当成页面配置手工修改。
+确认最近一次任务成功后，可在仓库 **Settings → Pages** 查看当前站点地址。默认项目站点会继承账号主页的自定义域名；当前账号使用 `www.hao-ming.top`，因此新项目最初会位于该域名的仓库子路径。HTTPS 目前由域名前面的 Cloudflare 提供，GitHub API 的 `https_enforced` 值不代表访客连接是否已使用 HTTPS；不要为此修改其他仓库的域名设置。构建使用 Pages 返回的 host 与 base path，并为站点 origin 使用 HTTPS。
+
+`site-data` 的成功发布记录保存在 `data/published.json` 中，不要把它当成页面配置手工修改。
 
 ## 绑定自有子域名
 
