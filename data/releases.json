@@ -297,6 +297,30 @@
           "digest": "sha256:0a049e9c7d1ce6cc768b3b12201bfc9ecab72ada300af4f7f001c3eef9f6e404"
         }
       ]
+    },
+    {
+      "id": "442379183",
+      "tag": "v1.9.4",
+      "version": "v1.9.4",
+      "title": "v1.9.4",
+      "publishedAt": "2026-11-12T01:24:26Z",
+      "notes": "## What's Changed\n* fix: translation problem by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/30\n* feat: Add effect of splint on totalForce by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/31\n* docs: add images and update readme by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/32\n* docs: add nexus badge by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/33\n* fix: correct some container descriptions & update coverage comment action by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/34\n* fix: update translations for guns use small magazine by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/35\n* feat: add corresponding item descriptions to crystal buildings by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/36\n* fix: release issue for non-ASCII characters by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/38\n* fix: update bigpack annotations by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/40\n* Fix/physical swing attack cooldown by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/41\n* fix: clarify `turretdsc` explosion effects and damage details by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/43\n* refactor: replace vendor submodule with tracked translation files by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/46\n* ci: add pr size labeler by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/47\n* feat!: remove floppy translations by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/48\n* feat!: remove multiplayer translations and outdated translations by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/49\n* feat: update translation descriptions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/50\n* feat: update ruff rules by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/51\n* feat: update zh-CN translation file by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/52\n* feat: update pause notes by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/53\n* chore: rename patch and workflow by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/54\n* feat: update vendor by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/55\n* feat: update translations by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/56\n* feat: update-version by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/57\n* feat: update vendor by @Werewolf-Wu in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/58\n* feat: update descriptions by @dodo23333 in https://github.com/dodo23333/cu-chinese-wiki-translations/pull/59\n\n\n**Full Changelog**: https://github.com/dodo23333/cu-chinese-wiki-translations/compare/v1.8.3...v1.9.4",
+      "source": "upstream",
+      "releaseUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/tag/v1.9.4",
+      "prerelease": false,
+      "assets": [
+        {
+          "id": "737582374",
+          "name": "wiki-translations-official-v1.9.4.json",
+          "label": "",
+          "path": "downloads/releases/442379183/737582374-65362184d46c9464.json",
+          "size": 581650,
+          "sha256": "65362184d46c946469610bd4eca921ffcd40a3b18509a4335ab49b28190e081a",
+          "sourceUrl": "https://github.com/dodo23333/cu-chinese-wiki-translations/releases/download/v1.9.4/wiki-translations-official-v1.9.4.json",
+          "upstreamUpdatedAt": "2026-11-12T01:24:25Z",
+          "digest": "sha256:65362184d46c946469610bd4eca921ffcd40a3b18509a4335ab49b28190e081a"
+        }
+      ]
     }
   ]
 }
